@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { stringify } = require('querystring');
 
-const PORT = 4001;
+const PORT = process.env.PORT || 4001;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
