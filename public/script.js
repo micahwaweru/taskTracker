@@ -61,7 +61,13 @@ var elBuilder = function(obj){
             desTxt.innerHTML= taDe;
             desDiv.appendChild(desTxt);
 
-
+        btnEl.addEventListener('click',function(e){
+            e.preventDefault();
+            console.log(e.target.id)
+            selTask=e.target.id;
+            fetch(`/deleteTask/${selTask}`,{method:'DELETE'})
+            location.reload();
+        })
 
 
     }
